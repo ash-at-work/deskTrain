@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="author" content="Jonathan Chong, National Rail Enquiries">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-316623-26']);
+		_gaq.push(['_setDomainName', 'none']);
+		_gaq.push(['_setAllowLinker', true]);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = '//www.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+<body>
+    <div id="front">
+        <div class="box-15">
+            <div class="b15-t">
+                <div class="b15-tr"> </div>
+            </div>
+            <div class="b15-m">
+                <div class="b15-p clear">
+                    <h1 class="sifr"> <span class="sifr-yellow"> </span></h1>
+                    <p class="message"></p>
+                    <h2 class="station"></h2>
+                    <table cellpadding="0" cellspacing="0" border="0" class="trains">
+                        <col width="50%">
+                        <col width="15%">
+                        <col width="20%">
+                        <col width="15%">
+                    </table>
+                    <p><strong>Last updated at</strong> <span class="last_updated_time"></span></p>
+                    <div class="key">
+                       <!-- start service <h3>Key</h3> -->
+                        <p><strong>e</strong> - estimated</p>
+                    </div>
+                    <p class="loading"><img src="Images/waiting.gif"></p>
+                    <p class="messageUpdate"></p>
+                </div>
+            </div>
+            <div class="b15-b">
+                <div class="b15-br"> </div>
+            </div>
+            <div id="infobutton" class="info"></div>
+            <div id="update"><img src="Images/update.png"></div>
+        </div>
+    </div>
+    <!-- end front -->
+    <div id="back">
+        <div class="box-4">
+            <div class="b4-t">
+                <div class="b4-tr"> </div>
+            </div>
+            <div class="b4-m">
+                <div class="b4-p clear">
+                    <h2 class="sifr">Your <span class="sifr-yellow">station</span></h2>
+                    <p class="message"></p>
+                    <!--<input type="text" id="from" name"from" value="" />
+					<input type="text" id="to" name"to" value="" />-->
+                    <label for="train-from">From</label>
+                    <input type="text" id="train-from" name="train-from" class="station predictText" value="" aria-labelledby="train-from">
+                    <input type="hidden" id="from" name"from"="" value="">
+                    <label for="train-to">to (optional)</label>
+                    <input type="text" id="train-to" name="train-to" class="station predictText faded" value="" aria-labelledby="train-to">
+                    <label for="num">Trains to show (7 - 15)</label>
+                    <input id="num" type="range" min="7" max="15" value="11">
+                    <div id="glassButton"></div>
+                </div>
+            </div>
+            <div class="b4-b">
+                <div class="b4-br"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- end back -->
+    <!-- start service -->
+    <div id="service">
+        <div class="box-30">
+            <div class="b30-t">
+                <div class="b30-tr"> </div>
+            </div>
+            <div class="b30-m">
+                <div class="b30-p clear">
+                    <h2 class="sifr">Live <span class="sifr-yellow">progress</span>
+                        <p class="message"></p>
+                    </h2><h2 class="route"></h2>
+                    <h3 class="toc"></h3>
+                    <table cellpadding="0" cellspacing="0" border="0" class="trains">
+                        <col width="50%">
+                        <col width="15%">
+                        <col width="20%">
+                        <col width="15%">
+                    </table>
+                    <p><strong>Last updated at</strong> <span class="last_updated_time"></span></p>
+                    <div class="key">
+                         <!-- start service <h3>Key</h3> -->
+                        <p><strong>d</strong> - departed, <strong>e</strong> - estimated</p>
+                    </div>
+                    <p class="loading"><img src="Images/waiting.gif"></p>
+                    <p class="messageUpdate"></p>
+                </div>
+            </div>
+            <div class="b30-b">
+                <div class="b30-br"> </div>
+            </div>
+            <div id="infobutton" class="info"></div>
+        </div>
+    </div>
+    <!-- end service -->
+    <div id="picker" aria-live="assertive" aria-atomic="true" aria-relevant="additions removals">
+        <ul id="d" class="s">
+            <li class="no-sell no-pad">
+                Please type your station name
+            </li>
+        </ul>
+        <div class="s" id="p1"></div>
+        <div class="s" id="p2"></div>
+        <ul id="n">
+            <li class="no-sel no-pad">
+                No stations found
+            </li>
+        </ul>
+        <ul id="sp-s-e">
+        </ul>
+        <ul id="je">
+            <li class="no-sel no-pad">
+                Sorry, we can't plan this journey
+            </li>
+        </ul>
+        <ul id="loading">
+            <li class="no-sel no-pad">
+                Loading station data...
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="js/FC.js"></script>
+    <script type="text/javascript">(function(f,g,h,i,b,c,d){c=h.length;for(d="isfocused";c--;)if(b=i.getElementById(h[c])){f(b,"focus",function(e,a){a=g(e);a.setAttribute(d,"true");if(a.value==a.defaultValue)a.value=""});f(b,"blur",function(e,a){a=g(e);a.setAttribute(d,null);if(a.value==""&&(a.defaultValue==="Station name / code"||/w3em/.test(a.className)))a.value=a.defaultValue})}})(FC.addEvent,FC.commonEventObject,["train-from","train-to"],
+document);</script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Parts/parts.js" charset="utf-8"></script>
+    <script type="text/javascript" src="localizedStrings.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/station_picker.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript">
+		$('#service').click(function() {
+			showFront();
+		});
+	</script>
+</body>
+</html>
