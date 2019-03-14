@@ -1,0 +1,240 @@
+/* Disables ugly "text selection" of entire widget with command-a */
+
+/*
+* {
+    -khtml-user-select: none;
+}
+*/
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Google Sans, sans-serif;
+    font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+}
+
+h2.station, h2.station a, h2.route, h2.route a {
+    font-family: Product Sans, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+	color: #fff;
+}
+
+h3.toc {
+    font-family: Product Sans, sans-serif;
+    font-size: 12px;
+	font-weight: normal;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+	color: #eee;
+}
+
+img.logo {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+p.message {
+	/* background: url('../Images/icon-note-noshadow-ondark.gif') no-repeat left; */
+	padding: 0 0 0 30px;
+}
+
+#back p.message {
+	margin-bottom: 10px;
+}
+
+p.message, p.messageUpdate a {
+	color: #fff;
+}
+
+p.messageUpdate {
+	background: url('../Images/icon-alert-small.png') no-repeat left;
+	padding: 0 0 0 30px;
+}
+
+#front {
+    display: block;
+    position: absolute;
+    width: 350px;
+    min-height: 800px;
+}
+
+/*
+#front p, #front td, #front th, #front h1, #front h2 {
+	visibility: hidden!important;
+}
+*/
+
+#front img, #service img {
+    margin-bottom: 10px;
+}
+
+#back {
+    display: none;
+    position: absolute;
+    width: 300px;
+    min-height: 500px;
+}
+
+#service {
+    display: none;
+    position: absolute;
+    width: 300;
+	min-height: 790px;
+}
+
+label, input, select {
+	width: 100%;
+    clear: both;
+}
+
+table.trains th, table.trains td {
+	padding: 0px 3px 3px 0px;
+}
+
+table.trains th, table.trains th a {
+	text-align: left;
+	font-weight: normal;
+    color: rgb(255, 225, 85);
+	cursor: pointer;
+	vertical-align: top;
+}
+
+table.trains td.report {
+    color: #ddd;
+}
+
+table.trains td.delayed {
+    color: red;
+    font-weight: bold;
+}
+
+table.trains tr.location td, table.trains tr.location th {
+	font-weight: bold;
+}
+
+hr {
+    border: 1px;
+    height: 5px;
+    margin-bottom: 0px;
+    color: #eee;
+}
+
+.sifr {
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+}
+
+#infobutton {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    top: 8px;
+    left: 320px;
+}
+
+.b4-br {
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+}
+
+.faded {
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+    margin-top: 0px;
+    opacity:0.5;
+    filter: alpha(opacity=50);
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+input, select {
+    margin-left: -1px;
+    margin-bottom: 10px;
+    width: 200px;
+    color: rgb(0, 0, 0);
+}
+
+#glassButton {
+    cursor: default;
+    -khtml-user-select: none;
+    position: relative;
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+    margin-left: -2px;
+    margin-top: 10px;
+}
+
+.copy, .copy a, p.copy {
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+	color: #ccc;
+}
+
+p.loading img {
+    margin-top: 10px;
+    margin-left: -4px;
+    margin-bottom: 0px;
+    width: 200px;
+}
+
+#slider {
+    position: relative;
+    display: block;
+    -khtml-margin-top-collapse: separate;
+    -khtml-margin-bottom-collapse: separate;
+    margin-left: -2px;
+    width: 200px;
+}
+
+#update {
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    top: -20px;
+    left: 350px;
+}
+
+ul.stations {
+	list-style-type: none;
+	margin: 0;
+}
+
+ul.stations li {
+	margin: 0;
+	padding: 0;
+}
+
+div.stations {
+	height: 88px;
+	overflow: auto;
+	margin-bottom: 0px;
+}
+
+div.key h3 {
+    font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 0px;
+}
